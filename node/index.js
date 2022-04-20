@@ -1,13 +1,18 @@
-// for( let letter of "Hello"){
-// console.log(letter);
-// }
-
 const express = require('express')
 const app = express()
+const path = require('path')
 
-app.get('/', function (req, res){
-    console.log(reg)
-    res.send('helo')
+// KONFIGURACJA STATYCZNEGO FOLDERU
+app.use( express.static( path.join(__dirname, '/src/static')))
+
+
+// Pobieranie informacji od klienta 
+
+app.post("/sendForm", (req, res) => {
+console.log(req.body)
+
+res.send|('OK')
 })
 
 app.listen(80)
+
